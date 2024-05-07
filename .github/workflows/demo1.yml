@@ -9,14 +9,17 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
 
-        - name: welcome message
-          run: echo "my first github actions job"
+        - name: List and Read File
+          run: |
+            echo "my first github actions job"
+            ls -a
+            cat programs/test.py
 
-        - name: List files
-          run: ls
-
-        - name: read file
-          run: cat programs/test.py
+#        - name: List files
+#          run: ls
+#
+#        - name: read file
+#          run: cat programs/test.py
 
 
 
