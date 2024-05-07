@@ -16,7 +16,7 @@ jobs:
           run: ls
 
         - name: read file
-          run: cat main.py
+          run: cat test.py
 
 
 
