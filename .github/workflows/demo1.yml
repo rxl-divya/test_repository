@@ -1,9 +1,24 @@
-name: hello-world
+name: my first workflow run
+
 on: push
+
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-#      - name: my-step
-       - run: echo "Hello World!"
-       - run: python3 --version
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v4
+
+        - name: List and Read File
+          run: |
+            echo "my first github actions job"
+            ls -a
+            cat programs/test.py
+
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover, I am dragon..RWAr" >> dragon.txt
+
+
+
+
+
