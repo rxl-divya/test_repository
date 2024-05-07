@@ -12,8 +12,8 @@ jobs:
         - name: list repo files
           run: ls -a
 
-#        - name: ascii program
-#          run: ./ascii-script.sh
+        - name: Executing shell script
+          run: ./ascii-script.sh
 
 #        - name: Install ascii program
 #          run: sudo apt-get install cowsay -y
