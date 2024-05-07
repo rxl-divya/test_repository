@@ -9,12 +9,6 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
 
-#        - name: List repo files
-#          run: ls -a
-#
-#        - name: Executing shell Script
-#          run: ./ascii_script.sh
-
         - name: Install ascii program
           run: sudo apt-get install cowsay -y
 
