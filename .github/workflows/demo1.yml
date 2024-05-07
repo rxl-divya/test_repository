@@ -15,11 +15,10 @@ jobs:
             ls -a
             cat programs/test.py
 
-#        - name: List files
-#          run: ls
-#
-#        - name: read file
-#          run: cat programs/test.py
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover, I am dragon..RWAr" >> dragon.txt
+
+
 
 
 
