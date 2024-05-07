@@ -1,9 +1,19 @@
-name: hello-world
+name: my first workflow run
+
 on: push
+
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-#      - name: my-step
-       - run: echo "Hello World!"
-       - run: python3 --version
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: welcome message
+          run: echo "my first github actions job"
+
+        - name: List files
+          run: ls
+
+        - name: read file
+          run: cat main.py
+
+
+
