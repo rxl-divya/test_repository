@@ -18,7 +18,7 @@ jobs:
             ./ascii-script.sh
 
         - name: upload file
-          uses: actions/upload-artifacts@v3
+          uses: actions/upload-artifact@v3
           with:
               name: dragon_text_file
               file: dragon.txt
@@ -30,7 +30,7 @@ jobs:
         steps:
 
             - name: download file
-              uses: actions/download-artifacts@v3
+              uses: actions/download-artifact@v3
               with:
                   name: dragon_text_file
 
