@@ -9,13 +9,49 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
 
-        - name: list repo files
-          run: ls -a
+        - name: install cowsay program
+          run: sudo apt-get install cowsay -y
 
-        - name: Executing shell script
-          run: |
-            chmod +x ascii-script.sh
-            ./ascii-script.sh
+        - name : execute cowsay CMD
+          run: cowsay -f dragon "Run for cover, I am dragon..RWAr" >> dragon.txt
+
+#        - name: Executing shell script
+#          run: |
+#            chmod +x ascii-script.sh
+#            ./ascii-script.sh
+
+        - name: upload file
+          uses: actions/upload-artifact@v3
+          with:
+              name: dragon_text_file
+              path: dragon.txt
+
+
+    second-job:
+        needs: first-job
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: download file
+              uses: actions/download-artifact@v3
+              with:
+                  name: dragon_text_file
+
+            - name: test file
+              run: grep -i "dragon" dragon.txt
+
+    third-job:
+        needs: second-job
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: download file
+              uses: actions/download-artifact@v3
+              with:
+                  name: dragon_text_file
+
+            - name: Read file
+              run: cat dragon.txt
 
 #        - name: Install ascii program
 #          run: sudo apt-get install cowsay -y
