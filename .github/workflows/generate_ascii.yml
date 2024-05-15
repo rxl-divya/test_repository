@@ -9,13 +9,16 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
 
-        - name: list repo files
-          run: ls -a
+        - name: install cowsay program
+          run: sudo apt-get install cowsay -y
 
-        - name: Executing shell script
-          run: |
-            chmod +x ascii-script.sh
-            ./ascii-script.sh
+        - name : execute cowsay cmd
+          run: cowsay -f dragon "Run for cover, I am dragon..RWAr" >> dragon.txt
+
+#        - name: Executing shell script
+#          run: |
+#            chmod +x ascii-script.sh
+#            ./ascii-script.sh
 
         - name: upload file
           uses: actions/upload-artifact@v3
