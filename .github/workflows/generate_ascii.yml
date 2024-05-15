@@ -17,12 +17,22 @@ jobs:
             chmod +x ascii-script.sh
             ./ascii-script.sh
 
+        - name: upload file
+          uses: actions/upload-artifacts@v3
+          with:
+              name: dragon_text_file
+              file: dragon.txt
+
+
     second-job:
         needs: first-job
         runs-on: ubuntu-latest
         steps:
-            - name: sleep for 10 sed
-              run: sleep 10
+
+            - name: download file
+              uses: actions/download-artifacts@v3
+              with:
+                  name: dragon_text_file
 
             - name: test file
               run: grep -i "dragon" dragon.txt
