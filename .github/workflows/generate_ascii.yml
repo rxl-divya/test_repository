@@ -18,6 +18,7 @@ jobs:
             ./ascii-script.sh
 
     second-job:
+        needs: first-job
         runs-on: ubuntu-latest
         steps:
             - name: sleep for 10 sed
