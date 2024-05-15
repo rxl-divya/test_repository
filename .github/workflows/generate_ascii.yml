@@ -17,6 +17,15 @@ jobs:
             chmod +x ascii-script.sh
             ./ascii-script.sh
 
+    second-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: sleep for 10 sed
+              run: sleep 10
+
+            - name: test file
+              run: grep -i "dragon" dragon.txt
+
 #        - name: Install ascii program
 #          run: sudo apt-get install cowsay -y
 #
