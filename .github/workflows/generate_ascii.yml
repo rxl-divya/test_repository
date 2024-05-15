@@ -41,7 +41,7 @@ jobs:
               run: grep -i "dragon" dragon.txt
 
     third-job:
-        needs: first-job
+        needs: second-job
         runs-on: ubuntu-latest
         steps:
             - name: Read file
